@@ -1,6 +1,9 @@
 # CoffeeShop-CRM
 
-# 05/12
+## 05/12
 
-- Setup repo on Github
-- Created React project
+Created React app
+Created GitHub repo
+Created Server setup 
+Installed MongoDB, Mongoose and Express for this.
+Added server.js file
