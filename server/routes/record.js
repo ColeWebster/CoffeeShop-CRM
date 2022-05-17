@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 const recordRoutes = express.Router();
 const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
@@ -14,23 +14,23 @@ recordRoutes.route("/record").get(function (req, res) {
         });
 });
 
-recordRoutes.route("/record/add").post(function (req, response) {
+recordRoutes.route("/record/add").post(function (req, res) {
     let db_connect = dbo.getDb();
-    let myobj = {
+    let myObj = {
         name: req.body.name,
         position: req.body.position,
         level: req.body.level,
     };
-    db_connect.collection("records").insertOne(myobj, function (err, res) {
+    db_connect.collection("records").insertOne(myObj, function (err, res) {
         if (err) throw err;
         response.json(res)
     });
 });
 
-recordRoutes.route("/update/:id").post(function (req, response) {
+recordRoutes.route("/update/:id").post(function (req, res) {
     let db_connect = dbo.getDb();
-    let myquery = { _id: ObjectId( req.params.id )};
-    let newvalues = {
+    let myQuery = { _id: ObjectId( req.params.id )};
+    let newValues = {
       $set: {
         name: req.body.name,
         position: req.body.position,
@@ -39,20 +39,20 @@ recordRoutes.route("/update/:id").post(function (req, response) {
     };
     db_connect
       .collection("records")
-      .updateOne(myquery, newvalues, function (err, res) {
+      .updateOne(myQuery, newValues, function (err, res) {
         if (err) throw err;
         console.log("1 document updated");
-        response.json(res);
+        res.json(res);
       });
   });
 
-recordRoutes.route("/:id").delete((req, response) => {
+recordRoutes.route("/:id").delete((req, res) => {
     let db_connect = dbo.getDb();
-    let myquery = { _id: ObjectId( req .params.id )};
-    db_connect.collection("records").deleteOne(myquery, function (err, obj) {
+    let myQuery = { _id: ObjectId( req .params.id )};
+    db_connect.collection("records").deleteOne(myQuery, function (err, obj) {
         if (err) throw err;
         console.log("1 document deleted");
-        response.json(obj);
+        res.json(obj);
     });
 });
 
