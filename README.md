@@ -1,4 +1,5 @@
 # CoffeeShop-CRM
+
 View daily change log here: [Project Status](https://docs.google.com/document/d/1r2VE8agbp9JnYRzFm4UsYNEeDTkDTzOd_RltRq_51a8/edit?usp=sharing)
 
 Following: [Mern Tutorial](https://www.mongodb.com/languages/mern-stack-tutorial)
@@ -22,3 +23,4 @@ Following: [Mern Tutorial](https://www.mongodb.com/languages/mern-stack-tutorial
 ## 5/17
 - Finished the create a new profile component.
 - Worked on the edit portion of the CRUD operation.
+- Added the list of records for the GET method. 
