@@ -24,3 +24,10 @@ Following: [Mern Tutorial](https://www.mongodb.com/languages/mern-stack-tutorial
 - Finished the create a new profile component.
 - Worked on the edit portion of the CRUD operation.
 - Added the list of records for the GET method. 
+
+## 5/26
+- Added branches and pull requests to the repo
+- Added navbar
+- Added a list of all records in system
+- Added routing in App.JS for all elements
+
